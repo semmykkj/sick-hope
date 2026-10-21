@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', 'Georgia', serif;
+  background: #0a0a0a;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 550px;
+}
+
+.login-box {
+  background: #1a1a1a;
+  border: 3px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  padding: 50px 40px;
+  box-shadow: 
+    inset 1px 1px 0 #2a2a2a,
+    inset -1px -1px 0 #000000,
+    8px 8px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #1a0033 0%, #330066 50%, #4a0080 100%);
+  border-bottom: 2px solid #000000;
+}
+
+.login-box::after {
+  content: '✕';
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  background: #2a2a2a;
+  border: 2px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.login-box h2 {
+  color: #b366ff;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group label {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+}
+
+.input-group input {
+  background: #0a0a0a;
+  border: 2px solid;
+  border-color: #000000 #4a4a4a #4a4a4a #000000;
+  padding: 12px 15px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-family: 'Times New Roman', serif;
+  outline: none;
+}
+
+.input-group input:focus {
+  background: #1a1a00;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+}
+
+.input-group input::placeholder {
+  color: #666666;
+  font-style: italic;
+}
+
+button[type="submit"] {
+  background: #2a2a2a;
+  border: 2px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  padding: 15px 30px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 
+    inset 1px 1px 0 #3a3a3a,
+    inset -1px -1px 0 #000000;
+}
+
+button[type="submit"]:hover {
+  background: #3a3a3a;
+}
+
+button[type="submit"]:active {
+  border-color: #000000 #4a4a4a #4a4a4a #000000;
+  box-shadow: 
+    inset -1px -1px 0 #3a3a3a,
+    inset 1px 1px 0 #000000;
+  padding: 16px 29px 14px 31px;
+}
+
+button[type="submit"] a {
+  color: #b366ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button[type="submit"] a:hover {
+  text-decoration: underline;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #4a4a4a;
+}
+
+.register-link p {
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-family: 'Times New Roman', serif;
+}
+
+.register-link a {
+  color: #6699ff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  color: #ff6666;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 40px 25px;
+  }
+  
+  .login-box h2 {
+    font-size: 2rem;
+  }
+}

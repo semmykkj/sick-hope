@@ -1,0 +1,325 @@
+/* =============================================
+   SICK HOPE — CARDÁPIO/CATÁLOGO (FUTURISTIC)
+   ============================================= */
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d1b3d 100%);
+  color: rgba(255, 255, 255, 0.87);
+  min-height: 100vh;
+}
+
+/* ⚠️ ANIMAÇÃO DE GIRO REMOVIDA ⚠️ */
+
+.cardapio {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d1b3d 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardapio::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(255, 0, 100, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(0, 255, 255, 0.06) 0%, transparent 40%);
+  z-index: 0;
+}
+
+.cardapio h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #ff0066, #ff6b9d, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 100, 0.4));
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(15, 20, 40, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 22px;
+  width: 260px;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 10px 40px rgba(255, 0, 100, 0.15),
+    0 0 80px rgba(0, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff0066, #00ffff, #ff0066);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.2;
+  filter: blur(10px);
+  transition: opacity 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 15px 50px rgba(255, 0, 100, 0.3),
+    0 0 100px rgba(0, 255, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 0, 100, 0.4);
+}
+
+.card:hover::before {
+  opacity: 0.4;
+}
+
+/* Ícones de roupa (adaptado de pizza) */
+.roupa-icon { 
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.card:hover .roupa-icon {
+  transform: scale(1.1);
+}
+
+.roupa-icon::before { content: '👕'; }
+.card:nth-child(2) .roupa-icon::before { content: '👖'; }
+.card:nth-child(3) .roupa-icon::before { content: '👗'; }
+.card:nth-child(4) .roupa-icon::before { content: '🧥'; }
+
+.card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.card p { 
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem; 
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+  min-height: 42px;
+}
+
+/* PREÇO COM FONTE MONOESPAÇADA DIGITAL */
+.card strong {
+  font-family: 'Courier Prime', 'Courier New', monospace !important;
+  font-size: 1.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  letter-spacing: 2px;
+  margin: 12px 0;
+  display: inline-block;
+  background: rgba(0, 255, 255, 0.08);
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.card:hover strong {
+  background: rgba(0, 255, 255, 0.12);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.card button {
+  flex: 1;
+  padding: 11px;
+  background: linear-gradient(135deg, #ff0066, #ff6b9d);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 0, 100, 0.4);
+}
+
+.card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 0, 100, 0.6), 0 0 20px rgba(255, 0, 100, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card button:active {
+  transform: translateY(-1px);
+}
+
+.card button.btn-excluir {
+  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
+  color: #00ffff;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1);
+}
+
+.card button.btn-excluir:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.card button.btn-atualizar {
+  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
+  color: #ffcc00;
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.1);
+}
+
+.card button.btn-atualizar:hover {
+  border-color: #ffcc00;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.5), 0 0 15px rgba(255, 204, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.card button.btn-adicionar {
+  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
+  color: #00ff99;
+  border: 2px solid rgba(0, 255, 153, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 255, 153, 0.1);
+}
+
+.card button.btn-adicionar:hover {
+  border-color: #00ff99;
+  box-shadow: 0 0 25px rgba(0, 255, 153, 0.5), 0 0 15px rgba(0, 255, 153, 0.3);
+  transform: translateY(-3px);
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #0a0e27, #1a1f3a);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255, 0, 100, 0.3);
+  letter-spacing: 2px;
+  margin-top: auto;
+  box-shadow: 0 -5px 30px rgba(255, 0, 100, 0.1);
+}
+
+/* ── SCROLLBAR FUTURISTA ── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0066, #00ffff);
+  border-radius: 5px;
+  border: 2px solid #0a0e27;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff6b9d, #00ffff);
+}
+
+/* ── RESPONSIVIDADE ── */
+@media (max-width: 768px) {
+  .cardapio {
+    padding: 40px 15px;
+  }
+  
+  .cardapio h2 {
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+  }
+  
+  .cards {
+    gap: 20px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 320px;
+    padding: 25px 18px;
+  }
+  
+  .roupa-icon {
+    font-size: 3rem;
+  }
+  
+  .card strong {
+    font-size: 1.3rem;
+    padding: 8px 14px;
+  }
+  
+  .card button {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardapio h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card button {
+    width: 100%;
+  }
+}

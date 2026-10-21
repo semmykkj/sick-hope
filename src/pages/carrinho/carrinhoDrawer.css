@@ -1,0 +1,252 @@
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  animation: fadeIn 0.2s ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 380px;
+  max-width: 90vw;
+  height: 100vh;
+  background: #1a1a1a;
+  border-left: 2px solid #4a0080;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.drawer.aberto {
+  right: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.drawer-header {
+  background: linear-gradient(to bottom, #6a0dad 0%, #4a0080 100%);
+  color: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #2a0040;
+}
+
+.drawer-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+.drawer-fechar {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+.drawer-fechar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawer-vazio {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+}
+
+.drawer-vazio p {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.drawer-btn-ir {
+  display: inline-block;
+  background: #4a0080;
+  color: #ffffff;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  transition: background 0.15s;
+}
+
+.drawer-btn-ir:hover {
+  background: #6a0dad;
+}
+
+.drawer-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawer-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #121212;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+}
+
+.drawer-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: #0a0a0a;
+  border: 1px solid #4a4a4a;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.drawer-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.drawer-item-info h4 {
+  color: #b366ff;
+  font-size: 11px;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drawer-item-preco {
+  color: #b0b0b0;
+  font-size: 10px;
+  margin: 0 0 6px 0;
+}
+
+.drawer-item-qtd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.drawer-item-qtd button {
+  background: #0f0f0f;
+  border: 1px solid #4a4a4a;
+  color: #b366ff;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.drawer-item-qtd button:hover {
+  background: #2a1a3a;
+}
+
+.drawer-item-qtd span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 18px;
+  text-align: center;
+}
+
+.drawer-item-remover {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: #ff6666;
+  font-size: 12px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.drawer-item-remover:hover {
+  color: #ff3333;
+}
+
+.drawer-footer {
+  border-top: 1px solid #4a4a4a;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawer-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e0e0e0;
+  font-size: 13px;
+}
+
+.drawer-total strong {
+  color: #d999ff;
+  font-size: 18px;
+}
+
+.drawer-btn-ver {
+  display: block;
+  text-align: center;
+  background: #0f0f0f;
+  border: 1px solid #4a4a4a;
+  color: #b366ff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  transition: background 0.15s;
+}
+
+.drawer-btn-ver:hover {
+  background: #2a1a3a;
+}
+
+.drawer-btn-finalizar {
+  background: linear-gradient(to bottom, #6a0dad 0%, #4a0080 100%);
+  color: #ffffff;
+  border: 1px solid #2a0040;
+  padding: 12px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+.drawer-btn-finalizar:hover {
+  background: linear-gradient(to bottom, #7b1fbe 0%, #5a0090 100%);
+}

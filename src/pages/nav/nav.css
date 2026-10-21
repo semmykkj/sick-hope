@@ -1,0 +1,54 @@
+/* ===== NAVEGAÇÃO PADRÃO ===== */
+.nav-padrao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background: #0a0a0a;
+  border-bottom: 1px solid #4a0080;
+}
+
+.nav-padrao a,
+.nav-padrao button {
+  color: #b366ff;
+  text-decoration: none;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-padrao a:hover,
+.nav-padrao button:hover {
+  background: #2a1a3a;
+  color: #d999ff;
+}
+
+.nav-padrao a.ativo,
+.nav-padrao button.ativo {
+  background: #4a0080;
+  color: #ffffff;
+}
+
+.nav-padrao .separador {
+  color: #4a4a4a;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Badge do carrinho */
+.nav-padrao .badge {
+  background: #6a0dad;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+}

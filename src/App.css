@@ -1,0 +1,91 @@
+/* =============================================
+   SICK HOPE — ROOT & DEFAULTS (FUTURISTIC)
+   index.css / App.css
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&family=Courier+Prime:wght@700&display=swap');
+
+/* ── ROOT CONTAINER ── */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left; /* Reseta o centralização forçada do Vite para não quebrar layouts */
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d1b3d 100%);
+  min-height: 100vh;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+}
+
+/* ── LOGO STYLES ── */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms, transform 300ms;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 100, 0.3));
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(255, 0, 100, 0.8));
+  transform: scale(1.05);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(0, 255, 255, 0.8));
+}
+
+/* ⚠️ ANIMAÇÃO DE GIRO REMOVIDA CONFORME SOLICITADO ⚠️ */
+/* O @keyframes logo-spin e o @media (prefers-reduced-motion) foram deletados */
+
+/* ── CARD DEFAULT (Estilizado para fallback) ── */
+.card {
+  background: rgba(15, 20, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2em;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(255, 0, 100, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 50px rgba(255, 0, 100, 0.3);
+}
+
+/* ── TEXTO DE RODAPÉ / DOCS ── */
+.read-the-docs {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.read-the-docs a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.read-the-docs a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  text-decoration: underline;
+}
+
+/* ── SCROLLBAR FUTURISTA (Global) ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0066, #00ffff);
+  border-radius: 4px;
+}
+

@@ -1,0 +1,392 @@
+/* ============================================
+   HOME.CSS - Página Home (SickHope)
+   Estética Windows 95 / Retro
+   ============================================ */
+
+/* ===== RESET LOCAL ===== */
+.home * {
+  box-sizing: border-box;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.home {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+/* ===== HERO ===== */
+.home .hero {
+  background: #1a1a1a;
+  border: 3px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  box-shadow: 
+    inset 1px 1px 0 #2a2a2a,
+    inset -1px -1px 0 #000000,
+    8px 8px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding: 70px 40px 50px;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.home .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #1a0033 0%, #330066 50%, #4a0080 100%);
+  border-bottom: 2px solid #000000;
+}
+
+.home .hero::after {
+  content: 'SickHope.exe';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 1px;
+}
+
+.home .hero h1 {
+  color: #b366ff;
+  font-size: 4rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 #000000;
+}
+
+.home .hero p {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home .hero .btn {
+  display: inline-block;
+  background: #2a2a2a;
+  border: 2px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  padding: 15px 40px;
+  color: #b366ff;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 
+    inset 1px 1px 0 #3a3a3a,
+    inset -1px -1px 0 #000000;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.home .hero .btn:hover {
+  background: #3a3a3a;
+  color: #d999ff;
+}
+
+.home .hero .btn:active {
+  border-color: #000000 #4a4a4a #4a4a4a #000000;
+  box-shadow: 
+    inset -1px -1px 0 #3a3a3a,
+    inset 1px 1px 0 #000000;
+  padding: 16px 39px 14px 41px;
+}
+
+/* ===== CATÁLOGO ===== */
+.home .cardapio {
+  background: #1a1a1a;
+  border: 3px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  box-shadow: 
+    inset 1px 1px 0 #2a2a2a,
+    inset -1px -1px 0 #000000,
+    8px 8px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding: 60px 40px 40px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.home .cardapio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #1a0033 0%, #330066 50%, #4a0080 100%);
+  border-bottom: 2px solid #000000;
+}
+
+.home .cardapio::after {
+  content: 'catalogo.dat';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 1px;
+}
+
+.home .cardapio > h2 {
+  color: #b366ff;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+  text-shadow: 2px 2px 0 #000000;
+}
+
+.home .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.home .card {
+  background: #0f0f0f;
+  border: 2px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  padding: 25px 20px;
+  box-shadow: 
+    inset 1px 1px 0 #2a2a2a,
+    inset -1px -1px 0 #000000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s;
+}
+
+.home .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    inset 1px 1px 0 #2a2a2a,
+    inset -1px -1px 0 #000000,
+    0 6px 15px rgba(179, 102, 255, 0.15);
+}
+
+.home .roupa-icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background: #1a1a1a;
+  border: 2px solid;
+  border-color: #000000 #4a4a4a #4a4a4a #000000;
+  color: #b366ff;
+  font-size: 2.2rem;
+  line-height: 66px;
+  margin-bottom: 5px;
+}
+
+.home .roupa-icon::before {
+  content: '👕';
+}
+
+.home .card:nth-child(2) .roupa-icon::before { content: '👖'; }
+.home .card:nth-child(3) .roupa-icon::before { content: '👗'; }
+.home .card:nth-child(4) .roupa-icon::before { content: '🧥'; }
+
+.home .card h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.home .card p {
+  color: #b0b0b0;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  min-height: 42px;
+}
+
+.home .card strong {
+  color: #b566ff;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.home .card button {
+  background: #2a2a2a;
+  border: 2px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  padding: 10px 20px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 
+    inset 1px 1px 0 #3a3a3a,
+    inset -1px -1px 0 #000000;
+  transition: background 0.15s;
+}
+
+.home .card button:hover {
+  background: #3a3a3a;
+  color: #b366ff;
+}
+
+.home .card button:active {
+  border-color: #000000 #4a4a4a #4a4a4a #000000;
+  box-shadow: 
+    inset -1px -1px 0 #3a3a3a,
+    inset 1px 1px 0 #000000;
+  padding: 11px 19px 9px 21px;
+}
+
+/* ===== FOOTER ===== */
+.home footer {
+  background: #1a1a1a;
+  border: 3px solid;
+  border-color: #4a4a4a #000000 #000000 #4a4a4a;
+  box-shadow: 
+    inset 1px 1px 0 #2a2a2a,
+    inset -1px -1px 0 #000000,
+    8px 8px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding: 40px 40px 25px;
+  text-align: center;
+  width: 100%;
+}
+
+.home footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #1a0033 0%, #330066 50%, #4a0080 100%);
+  border-bottom: 2px solid #000000;
+}
+
+.home footer::after {
+  content: 'status.log';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 1px;
+}
+
+.home footer p {
+  color: #b0b0b0;
+  font-size: 1rem;
+  font-family: 'Times New Roman', serif;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+
+/* ===== LOGO ===== */
+.home .hero h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  text-decoration: none; /* remove o underline do h1 já que agora tem img */
+}
+
+.home .hero .logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 0 #000000);
+  transition: transform 0.2s;
+}
+
+.home .hero .logo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== IMAGEM DO PRODUTO ===== */
+.home .produto-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  background: #1a1a1a;
+  border: 2px solid;
+  border-color: #000000 #4a4a4a #4a4a4a #000000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.home .produto-img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .home .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home .hero {
+    padding: 60px 20px 40px;
+  }
+  
+  .home .hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .home .hero p {
+    font-size: 1rem;
+  }
+  
+  .home .cardapio {
+    padding: 50px 20px 30px;
+  }
+  
+  .home .cardapio > h2 {
+    font-size: 1.8rem;
+  }
+  
+  .home .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .home footer {
+    padding: 35px 20px 20px;
+  }
+  
+  .home footer p {
+    font-size: 0.9rem;
+  }
+}
+

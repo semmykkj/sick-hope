@@ -1,0 +1,280 @@
+/* ===== RESET ORKUT ===== */
+.orkut-page * {
+  box-sizing: border-box;
+}
+
+.orkut-page {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+/* ===== HEADER ===== */
+.orkut-header {
+  background: #1a1a1a;
+  border-bottom: 1px solid #4a0080;
+  padding: 8px 0;
+}
+
+.orkut-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.orkut-logo {
+  height: 100px;
+  width: auto;
+}
+
+.orkut-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.orkut-link {
+  color: #b366ff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.orkut-link:hover {
+  background: #2a1a3a;
+  color: #d999ff;
+}
+
+.orkut-link.ativo {
+  background: #4a0080;
+  color: #ffffff;
+}
+
+/* ===== BODY (sidebar + main) ===== */
+.orkut-body {
+  max-width: 1100px;
+  margin: 15px auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 15px;
+}
+
+/* ===== SIDEBAR ===== */
+.orkut-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ===== BOXES (estilo Orkut) ===== */
+.orkut-box {
+  background: #1a1a1a;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.orkut-box-title {
+  background: linear-gradient(to bottom, #6a0dad 0%, #4a0080 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-bottom: 1px solid #2a0040;
+}
+
+.orkut-box-content {
+  padding: 10px;
+}
+
+/* ===== FILTROS ===== */
+.filtro-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filtro-lista li {
+  margin-bottom: 4px;
+}
+
+.filtro-btn {
+  width: 100%;
+  text-align: left;
+  background: #0f0f0f;
+  border: 1px solid #4a4a4a;
+  padding: 6px 10px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  color: #b366ff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+.filtro-btn:hover {
+  background: #2a1a3a;
+  color: #d999ff;
+}
+
+.filtro-btn.ativo {
+  background: #4a0080;
+  color: #ffffff;
+  border-color: #2a0040;
+  font-weight: bold;
+}
+
+/* ===== MAIN ===== */
+.orkut-main {
+  min-width: 0;
+}
+
+.sem-produtos {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  font-style: italic;
+}
+
+/* ===== GRID DE PRODUTOS ===== */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* ===== CARD DO PRODUTO ===== */
+.produto-card {
+  background: #121212;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.produto-card:hover {
+  box-shadow: 0 2px 8px rgba(106, 13, 173, 0.4);
+}
+
+.produto-img-wrap {
+  background: #0a0a0a;
+  border-bottom: 1px solid #4a4a4a;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+}
+
+.produto-img {
+  max-width: 100%;
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.produto-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.produto-info h3 {
+  color: #b366ff;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.produto-desc {
+  color: #b0b0b0;
+  font-size: 11px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.produto-categoria {
+  color: #888;
+  font-size: 10px;
+  margin: 0;
+  font-style: italic;
+}
+
+.produto-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #4a4a4a;
+}
+
+.produto-preco {
+  color: #d999ff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-comprar {
+  background: linear-gradient(to bottom, #6a0dad 0%, #4a0080 100%);
+  color: #ffffff;
+  border: 1px solid #2a0040;
+  padding: 6px 14px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+.btn-comprar:hover {
+  background: linear-gradient(to bottom, #7b1fbe 0%, #5a0090 100%);
+}
+
+.btn-comprar:active {
+  background: #2a0040;
+}
+
+/* ===== FOOTER ===== */
+.orkut-footer {
+  max-width: 1100px;
+  margin: 15px auto;
+  padding: 15px;
+  text-align: center;
+  color: #888;
+  font-size: 10px;
+  border-top: 1px solid #4a4a4a;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .orkut-body {
+    grid-template-columns: 1fr;
+  }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-img-wrap {
+    min-height: 220px;
+  }
+
+  .produto-img {
+    max-height: 220px;
+  }
+}
